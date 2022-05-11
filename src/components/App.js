@@ -1,13 +1,20 @@
 import React from "react";
 
 import NavBar from "./NavBar";
+import GifListContainer from "./GifListContainer";
 
-// the App component should render out the GifListContainer component
+const API = "https://api.giphy.com/v1/gifs/search?q=";
+const KEY = "CBCoUOxg2ZFLDRCRYI6rKBdnumF21LcM";
 
 function App() {
+  // const fetchGifs = () => {
+  //   fetch(`${API}${query}&api_key=${KEY}&rating=g`);
+  // };
+
   return (
     <div>
       <NavBar color="black" title="Giphy Search" />
+      <GifListContainer />
     </div>
   );
 }
