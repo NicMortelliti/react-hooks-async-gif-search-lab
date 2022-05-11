@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import GifList from "./GifList";
 import GifSearch from "./GifSearch";
 
@@ -7,16 +7,14 @@ const KEY = "CBCoUOxg2ZFLDRCRYI6rKBdnumF21LcM";
 
 function GifListContainer() {
   const [gifArray, setGifArray] = useState([]);
-  const query = "dolphin";
 
-  useEffect(() => {
-    fetch(`${API}${query}&api_key=${KEY}&rating=g`)
+  // Function that sends search term to API via Fetch GET
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(e);
+    fetch(`${API}${e}&api_key=${KEY}&rating=g`)
       .then((r) => r.json())
       .then((data) => setGifArray(data.data.slice(0, 3)));
-  }, []);
-
-  function handleSubmit() {
-    console.log("Called handleSubmit in GifListContainer");
   }
 
   return (
