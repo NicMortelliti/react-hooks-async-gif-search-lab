@@ -7,20 +7,27 @@ const KEY = "CBCoUOxg2ZFLDRCRYI6rKBdnumF21LcM";
 
 function GifListContainer() {
   const [gifArray, setGifArray] = useState([]);
+  const [formData, setFormData] = useState({
+    query: "",
+  });
 
   // Function that sends search term to API via Fetch GET
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e);
-    fetch(`${API}${e}&api_key=${KEY}&rating=g`)
+    setFormData({ query: "" });
+    fetch(`${API}${e.target[0].value}&api_key=${KEY}&rating=g`)
       .then((r) => r.json())
       .then((data) => setGifArray(data.data.slice(0, 3)));
   }
 
   return (
     <div>
+      <GifSearch
+        formData={formData}
+        setFormData={setFormData}
+        handleSubmit={handleSubmit}
+      />
       <GifList array={gifArray} />
-      <GifSearch handleSubmit={handleSubmit} />
     </div>
   );
 }

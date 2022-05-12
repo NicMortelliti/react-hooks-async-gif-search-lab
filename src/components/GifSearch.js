@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 
-function GifSearch(handleSubmit) {
-  const [formData, setFormData] = useState({
-    query: "",
-  });
-
+function GifSearch({ formData, setFormData, handleSubmit }) {
   function handleChange(e) {
-    setFormData(e.target.value);
+    setFormData({ query: e.target.value });
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e, formData.query)}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <label>
         Enter a Search Term:
         <input
           type="text"
           name="query"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           value={formData.query}
         />
       </label>
