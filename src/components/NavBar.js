@@ -7,7 +7,7 @@ function NavBar({ color, title }) {
   };
 
   return (
-    <nav className={`navbar ${colors[color]}`}>
+    <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
         <div className="navbar-header">
           <span className="navbar-brand">{title}</span>

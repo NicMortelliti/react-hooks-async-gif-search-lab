@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function GifSearch({ formData, setFormData, handleSubmit }) {
   function handleChange(e) {
@@ -11,6 +11,7 @@ function GifSearch({ formData, setFormData, handleSubmit }) {
         Enter a Search Term:
         <input
           type="text"
+          className="form-control"
           name="query"
           onChange={handleChange}
           value={formData.query}
