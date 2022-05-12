@@ -2,7 +2,7 @@ import React from "react";
 
 function GifList({ array }) {
   return (
-    <ul className="list-group list-group-flush">
+    <ul className="list-group list-group-flush w-50 mx-auto">
       {array.map((image) => {
         return (
           <li key={image.id} className="list-group-item">

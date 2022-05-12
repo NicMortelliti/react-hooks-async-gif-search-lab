@@ -1,17 +1,12 @@
 import React from "react";
+import { RocketIcon } from "@primer/octicons-react";
 
-function NavBar({ color, title }) {
-  const colors = {
-    black: "navbar-inverse",
-    white: "navbar-default",
-  };
-
+function NavBar({ title }) {
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <span className="navbar-brand">{title}</span>
-        </div>
+    <nav className="navbar navbar-dark bg-success">
+      <div className="container-fluid justify-content-center">
+        <RocketIcon size="medium" fill="#fff" />
+        <span className="navbar-brand mx=5 mb-0 h1">{title}</span>
       </div>
     </nav>
   );
