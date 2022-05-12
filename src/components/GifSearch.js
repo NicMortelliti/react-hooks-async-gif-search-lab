@@ -6,8 +6,8 @@ function GifSearch({ formData, setFormData, handleSubmit }) {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <div className="input-group mb-3">
+    <form className="mx-auto mt-4 w-25" onSubmit={(e) => handleSubmit(e)}>
+      <div className="input-group">
         <input
           type="text"
           className="form-control"
