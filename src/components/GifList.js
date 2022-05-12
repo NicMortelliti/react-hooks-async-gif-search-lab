@@ -5,7 +5,7 @@ function GifList({ array }) {
     <ul>
       {array.map((image) => {
         return (
-          <li key={image.id}>
+          <li key={image.id} className="list-group-item">
             <img src={image.images.original.url} alt={image.title} />
           </li>
         );
