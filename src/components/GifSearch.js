@@ -7,17 +7,18 @@ function GifSearch({ formData, setFormData, handleSubmit }) {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <label>
-        Enter a Search Term:
+      <div className="input-group mb-3">
         <input
           type="text"
           className="form-control"
-          name="query"
+          placeholder="Enter a Search Term"
           onChange={handleChange}
           value={formData.query}
         />
-      </label>
-      <input type="submit" value="Find Gifs" />
+        <button className="btn btn-success" type="submit">
+          Find Gifs
+        </button>
+      </div>
     </form>
   );
 }
